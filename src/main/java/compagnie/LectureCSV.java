@@ -30,9 +30,9 @@ public class LectureCSV {
 
         Iterable<CSVRecord> records = csvFormat.parse(in);
 
-        List<Map<String,String>> vols = new ArrayList<>();
+        List<Map<String, String>> vols = new ArrayList<>();
         for (CSVRecord record : records) {
-            Map<String,String> vol = new HashMap<>();
+            Map<String, String> vol = new HashMap<>();
             vol.put("Code", record.get("Code"));
             vol.put("Dép", record.get("Dép"));
             vol.put("Arriv", record.get("Arriv"));
@@ -41,7 +41,9 @@ public class LectureCSV {
             vols.add(vol);
         }
 
-        System.out.println(vols);
+        for (Map<String, String> vol : vols) {
+            System.out.println(vol);
+            System.out.println();
+        }
     }
-
 }
